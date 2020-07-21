@@ -48,7 +48,7 @@ const inputPercentage = () => {
     currentNumber /= 100
 }
 
-// Fungsi untuk menghitung operasi dua buah bilangan
+// Fungsi untuk melakukan kalkulasi dua bilangan
 const calculate = () => {
     let result = ''
     switch (calculationOperator) {
@@ -89,7 +89,9 @@ numbers.forEach((number) => {
 // Operasi ketika .operator ditekan
 operators.forEach((operator) => {
     operator.addEventListener("click", (event) => {
+        calculate()
         inputOperator(event.target.value)
+        updateScreen(prevNumber)
     })
 })
 
